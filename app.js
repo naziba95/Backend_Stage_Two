@@ -9,6 +9,7 @@ require('dotenv').config()
 //middlewware to allow us parse json data
 app.use(express.json());
 
+
 app.use('/api', personRoute);
 
 (async () => {

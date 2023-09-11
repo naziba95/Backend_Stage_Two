@@ -6,6 +6,11 @@ const createPerson = async (req, res) => {
   try {
     const { name } = req.body;
 
+     // Check if the provided name is a string
+     if (typeof name !== 'string') {
+      return res.status(400).json({ error: 'Name must be a string' });
+    }
+
      // Check if a person with the same name already exists
      const existingPerson = await Person.findOne({ name });
 
@@ -51,13 +56,21 @@ res.json(person);
 const updatePerson = async (req, res) => {
 const { identifier } = req.params;
 
-  try {
+
+ try {
+
+       const { name } = req.body;
+
+    // Check if the provided name is a string
+    if (typeof name !== 'string') {
+      return res.status(400).json({ error: 'Name must be a string' });
+    }
 
     if (mongoose.Types.ObjectId.isValid(identifier)) {
       // update by Id if it is a valid ObjectId 
     const updatedPerson = await Person.findByIdAndUpdate(
       identifier,
-      { name: req.body.name }, // Update the "name" field
+      { name}, // Update the "name" field
       { new: true }
     );
     if (!updatedPerson) {
