@@ -33,16 +33,16 @@ Description: Create a new person.
 
 500 Internal Server Error on server error.
 
-**Get a Person by ID or Name**
-Endpoint: /:identifier
+**Get a Person by ID**
+Endpoint: /:user_id
 
 Method: GET
 
-Description: Fetch details of a person by their ID or name.
+Description: Fetch details of a person by their ID.
 
 Request Parameters:
 
-identifier (string): The person's ID or name.
+user_id (integer): The person's ID.
 Response Format:
 
 200 OK on success:
@@ -50,22 +50,22 @@ Response Format:
   "_id": "12345abcde",
   "name": "John Doe"
 }
-404 Not Found if the person with the specified ID or name does not exist:
+404 Not Found if the person with the specified ID does not exist:
 {
   "error": "Person not found"
 }
 500 Internal Server Error on server error.
 
-**Update a Person by ID or Name**
-Endpoint: /:identifier
+**Update a Person by ID**
+Endpoint: /:user_id
 
 Method: PUT
 
-Description: Update the details of a person by their ID or name.
+Description: Update the details of a person by their ID.
 
 Request Parameters:
 
-identifier (string): The person's ID or name.
+user_id (integer): The person's ID.
 Request Format:
 {
   "name": "Updated Name"
@@ -81,22 +81,22 @@ Response Format:
     "name": "Updated Name"
   }
 }
-404 Not Found if the person with the specified ID or name does not exist:
+404 Not Found if the person with the specified ID does not exist:
 {
   "error": "Person not found"
 }
 500 Internal Server Error on server error.
 
-**Delete a Person by ID or Name**
-Endpoint: /:identifier
+**Delete a Person by ID**
+Endpoint: /:user_id
 
 Method: DELETE
 
-Description: Delete a person by their ID or name.
+Description: Delete a person by their ID.
 
 Request Parameters:
 
-identifier (string): The person's ID or name.
+user_id (integer): The person's ID.
 Response Format:
 
 200 OK on success:
@@ -104,7 +104,7 @@ Response Format:
   "message": "Person deleted"
 }
 
-404 Not Found if the person with the specified ID or name does not exist:
+404 Not Found if the person with the specified ID does not exist:
 {
   "error": "Person not found"
 }
@@ -130,7 +130,7 @@ Content-Type: application/json
   "name": "John Doe"
 }
 
-**Get a Person by ID or Name**
+**Get a Person by ID**
 Request:
 GET /api/12345abcde
 Response:
@@ -142,7 +142,7 @@ Content-Type: application/json
   "name": "John Doe"
 }
 
-Update a Person by ID or Name
+Update a Person by ID
 Request:
 PUT /api/12345abcde
 Content-Type: application/json
@@ -161,7 +161,7 @@ Content-Type: application/json
     "name": "Updated Name"
   }
 }
-Delete a Person by ID or Name
+Delete a Person by ID
 Request:
 DELETE /api/12345abcde
 Response:
