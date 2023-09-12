@@ -3,11 +3,11 @@
 This documentation provides details on how to interact with the Person API. The Person API allows you to perform CRUD (Create, Read, Update, Delete) operations on a "person" resource.
 
 **Base URL**
-The base URL for this API is: https://backendstagetwo.onrender.com/api
+The base URL for this API is: https://backendstagetwo.onrender.com
 
 **Endpoints**
 **Create a New Person**
-Endpoint: /
+Endpoint: /api
 
 Method: POST
 
@@ -34,7 +34,7 @@ Description: Create a new person.
 500 Internal Server Error on server error.
 
 **Get a Person by ID**
-Endpoint: /:user_id
+Endpoint: /api/:user_id
 
 Method: GET
 
@@ -57,7 +57,7 @@ Response Format:
 500 Internal Server Error on server error.
 
 **Update a Person by ID**
-Endpoint: /:user_id
+Endpoint: /api/:user_id
 
 Method: PUT
 
@@ -88,7 +88,7 @@ Response Format:
 500 Internal Server Error on server error.
 
 **Delete a Person by ID**
-Endpoint: /:user_id
+Endpoint: /api/:user_id
 
 Method: DELETE
 
